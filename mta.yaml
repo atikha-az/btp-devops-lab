@@ -24,7 +24,16 @@ modules:
         properties:
           srv-url: ${default-url}
     requires:
-      []
+    - name: btp-devops-lab-uaa
+    - name: btp-devops-lab-db
 
 resources:
-  []
+  - name: btp-devops-lab-uaa
+    type: org.cloudfoundry.managed-service
+    parameters:
+      service: xsuaa
+      service-plan: application
+      path: ./xs-security.json
+      config:
+        xsappname: btp-devops-lab
+        tenant-mode: dedicated
