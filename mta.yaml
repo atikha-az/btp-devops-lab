@@ -25,7 +25,6 @@ modules:
           srv-url: ${default-url}
     requires:
     - name: btp-devops-lab-uaa
-    - name: btp-devops-lab-db
 
 resources:
   - name: btp-devops-lab-uaa
